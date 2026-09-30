@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/*
+  Custom theme: "Colorado Navy & Red" (built with theme-factory's custom-theme path).
+  Brand colors are approximations of the MZ5 logo. Swap the hex values here once
+  the official logo files are supplied.
+*/
+@theme {
+  --color-navy-950: #071426;
+  --color-navy-900: #0b1f3a;
+  --color-navy-800: #12294a;
+  --color-navy-700: #1c3a63;
+  --color-red: #c8102e;
+  --color-red-dark: #a50d26;
+  --color-paper: #f6f4ef;
+  --color-line: #dcd9d1;
+  --color-ink: #14202f;
+  --color-gray-600: #4a5563;
+  --color-gray-500: #5f6b7a;
+
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-red);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: #fff;
+}
+
+/* Photo placeholder: flat navy with faint shingle-course lines */
+.photo-slot {
+  background-color: var(--color-navy-800);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    rgba(255, 255, 255, 0.06) 27px,
+    rgba(255, 255, 255, 0.06) 28px
+  );
+}
